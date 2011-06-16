@@ -1,0 +1,27 @@
+To compile, type ... 
+
+g++ DrEvol_Br.cpp -O3 -o DrEvol_Br
+
+# in orochi
+g++ DrEvol_Br.cpp -Wall -W -O3 -ffast-math -funroll-loops -fomit-frame-pointer -march=nocona -o DrEvol_Br 
+
+# in mosix
+-Wall -O3 -ffast-math -funroll-loops -fomit-frame-pointer -march=pentium4 
+
+# in poole
+-O3 -ffast-math -funroll-loops -fomit-frame-pointer -mpowerpc 
+
+# in hpc
+-Wall -O3 -ffast-math -funroll-loops -fomit-frame-pointer -march=pentium4 
+
+# in bigdog
+-Wall -O3 -ffast-math -funroll-loops -fomit-frame-pointer -march=pentium4 
+
+(before compiling, you will probably want to change the name of some 
+output files specified 
+in DrEvolMultiX4.cpp) 
+
+To run, type 
+
+  ( time nohup DrEvol_Br infile=LargeTest.seq  inseed=inseed06.dat ) 
+> & oLargeTest 

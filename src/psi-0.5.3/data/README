@@ -1,0 +1,6 @@
+pdb1afp.T.prd: s - 0.5, p - 0.05, a/c/g/t - 0.25
+pdb1afp.U.prd: s - 0.3, p - 0.01, a/c/g/t - 0.2/0.3/0.3/0.2
+pdb1afp.V.prd: s - 1.0, p - 0.05, a/c/g/t - 0.25
+pdb1afp.W.prd: s - 2.0, p - 0.1, a/c/g/t - 0.25
+pdb1afp.X.prd: s - 3.0, p - 0.3, a/c/g/t - 0.25
+pdb1afp.Y.prd: s - 3.0, p - 0.15, a/c/g/t - 0.25

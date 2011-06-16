@@ -1,0 +1,2 @@
+
+src/psi --no-overwrite --exe-bayesfactor --auto-data 1g90A --data-directory data --directory output --gibbs-size 100 --gibbs-burn 1 --gibbs-freq 1 -s 1000 -f 100 -b 10000 --limit-time-to-run 3 

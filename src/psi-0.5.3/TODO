@@ -1,0 +1,82 @@
+* check the validity of output files
+  like for exe-estimation command, please check xxx.p output
+  for exe-bayesfactor command, please check xxx.p and xxx.b output
+* save posterior samples of 5 chains
+* more than one chains are not for other than 5 chains --> BUGGY 
+* standard error output setup in psi_fm.pl --> needs a test...
+* Five chains should have diffferent Gibbs grid points for sampling --> testing...
+* GSL_RNG_SEED number to standard out --> done
+* Fatal exit
+* information writing
+  pdbid chainid length smean sq05 sq25 smedian sq75 sq95 ssd
+                       pmean pq05 pq25 pmedian pq75 pq95 psd
+                       s_delta_mean s_delta_median s_delta_sd
+                       p_delta_mean s_delta_median p_delta_sd
+                       s_delta_plus_p_delta_mean s_delta_plus_p_delta_median s_delta_plus_p_delta_sd
+                       s_p_correlation s_p_covariance
+                       bf
+* simulation of a DNA sequence with a protein structure --> testing...
+
+* I MUST DEAL WITH missing residue? newOrder in energy.c and translation table issue
+* nsv and hiro module should be included in the psi main module
+*
+* rng will be merged into gslwrap! --> ???
+*
+* check the psr's function: BUGGY
+*
+* normal prior and normal proposal will be included
+*
+* very small strucutre like two-amino-acid sequence and/or faked energy
+*
+* seq.c: start codon
+* grid.c: think about it with gibbs sampler
+* 
+* translation table info should be in energy.int -> not applicable to the
+*   single sequence analysis
+*
+* acceptance ratio should be stored in the first full run of model 4 --> done
+* NO DATA option for checking the prior is flat or normal --> done
+
+-*- Outline -*-
+GSL_RNG_SEED=`date +%s` src/psi --auto-data 1r48A --directory test --data-directory data -s 100 --gibbs-size 10 --gibbs-freq 1 --gibbs-burn 1
+
+For the Book
+
+* cygwin compatibility -- library dependencies: in particular evalline
+* a flow control builtin dynamic module (with several builtins)
+
+Wishlist
+
+* documentation
+* free table contents at exit to analyse memory usage
+* functions
+* dictionary data type
+* file globbing
+* file redirection
+* environment manipulation - this could be stored in a dictionary?
+* process pipes
+* job control
+* aliases
+* script cli parameters should be stored in $1...
+* history saving and restoring
+* cache commands discovered in $PATH - using a dictionary?
+* autoloading of builtin dynamic modules
+* set module search path and initial module cli parameters
+* a readline completer dynamic module
+
+# configuration options for orochi
+../trunk/configure CFLAGS="-Wall -W -g -I$HOME/local/include" LDFLAGS="-L$HOME/local/lib"
+../trunk/configure CFLAGS="-Wall -W -O3 -ffast-math -funroll-loops -fomit-frame-pointer -march=nocona -I$HOME/local/include" LDFLAGS="-L$HOME/local/lib -static"
+
+# configuration options for mosix
+../trunk/configure CFLAGS="-Wall -O3 -ffast-math -funroll-loops -fomit-frame-pointer -march=pentium4 -I$HOME/usr/local/include" LDFLAGS="-L$HOME/usr/local/lib"
+../trunk/configure CFLAGS="-Wall -g -I$HOME/usr/local/include" LDFLAGS="-L$HOME/usr/local/lib"
+
+# compilation options suggested by Ben
+-O3 -ffast-math -funroll-loops -fomit-frame-pointer -march=pentium4 -fweb -DNDEBUG
+
+# configuration options for hpc
+../psi-0.5.1/configure CFLAGS="-O3 -ffast-math -funroll-loops -fomit-frame-pointer -march=pentium4 -I$HOME/usr/local/include" LDFLAGS="-L$HOME/usr/local/lib"
+
+# configuration options for poole
+../psi-0.5.1/configure CFLAGS="-O3 -ffast-math -funroll-loops -fomit-frame-pointer -mpowerpc -I$HOME/usr/local/include" LDFLAGS="-L$HOME/usr/local/lib"
